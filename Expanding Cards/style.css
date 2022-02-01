@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  /* display: flex - to center everything on the page */
+  display: flex;
+
+  /* flex-direction: column - to make elements in the body appear one under another in a columm - without this the elements will appear in a row */
+  flex-direction: column;
+
+  /* align-items: center - aligning items horizontally when flex direction is set to column */
+  align-items: center;
+
+  /*   justify-content: center - to center it vertically - body must have a height to trully move items to the center */
+  justify-content: center;
+
+  /* set height to 100vh viewport height - so the elements appear in the middle */
+  height: 100vh;
+
+  /* to avoid showing of scrollbars by default */
+  overflow: hidden;
+}

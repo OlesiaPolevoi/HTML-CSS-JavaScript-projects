@@ -1,2 +1,2 @@
 "use strict";
-console.log("This is script file");
+console.log("Expanding cards!!!");
