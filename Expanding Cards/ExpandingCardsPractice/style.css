@@ -63,6 +63,7 @@ body {
 }  - to show h3 text  that is in class .panel that also has a class .active */
 .panel.active h3 {
   opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
 
 /* add small screen differences*/
