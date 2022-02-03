@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,13 +7,10 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Muli", sans-serif;
 
   /* display: flex - to center everything on the page */
   display: flex;
-
-  /* flex-direction: column - to make elements in the body appear one under another in a columm - without this the elements will appear in a row */
-  flex-direction: column;
 
   /* align-items: center - aligning items horizontally when flex direction is set to column */
   align-items: center;
@@ -26,4 +23,67 @@ body {
 
   /* to avoid showing of scrollbars by default */
   overflow: hidden;
+}
+
+.container {
+  /*  display: flex - displays 5 div elements in a row*/
+  display: flex;
+
+  /* flex-direction: column; - to have elements on top of each other */
+  width: 90vw;
+}
+
+.panel {
+  /* background-size: auto 100%; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  /* border-radius: 50px; - makes cards rounded */
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px;
+  /* position: relative; - because I will position h3s inside "absolute" so the container element with this class .panel needs to be relative */
+
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+/*.panel.active -for class .parent that has class .active */
+.panel.active {
+  /* I can include images here instead of HTML  using background-image: url("") property*/
+  /* background-image: url("https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); */
+
+  flex: 7;
+}
+
+.panel.active h3 {
+  opacity: 1;
+
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* if screen is small - only show 3 cards - use media query */
+
+@media (max-width: 480px) {
+  /* the styles included here only apply when screen is less than 480px wide*/
+
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }

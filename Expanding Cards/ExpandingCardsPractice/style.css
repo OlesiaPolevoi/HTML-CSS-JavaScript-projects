@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  /* height: 100vh;
+  justify-content: center;
+  align-items: center; */
+}
+
+.panel {
+  /*background-size: cover - image property to cover entire background*/
+  background-size: cover;
+  /*   background-position: center- to center the image */
+  background-position: center;
+  /*   background-repeat: no-repeat; to avoid repeating imgs */
+  background-repeat: no-repeat;
+  height: 80vh;
+  /* border-radius: 50px -NOTE px not % */
+  border-radius: 50px;
+  /* color: #fff; - sets the color of the text inside the panels to white*/
+  color: #fff;
+  cursor: pointer;
+  /* display: flex; - no need for this */
+  /* width: 70vw; -no need for this- set width through flex*/
+  flex: 1;
+  margin: 10px;
+  position: relative;
+  /*   transition: flex 0.7s ease-in - for the transition on active class */
+  transition: flex 0.7s ease-in;
+}
+
+/* .panel h3 - instead of just h3. meaning h3 that is in the .panel class */
+.panel h3 {
+  /* color: #fff; - no need - set color in the .panel class*/
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  /*   opacity: 0 - makes text invisible. will change opacity later to only show on .active class */
+  opacity: 0;
+}
+
+/* .panel.active - the .panel class that also has .active class */
+.panel.active {
+  flex: 5;
+}
+
+/* .panel.active h3 {
+  opacity: 1;
+}  - to show h3 text  that is in class .panel that also has a class .active */
+.panel.active h3 {
+  opacity: 1;
+}
+
+/* add small screen differences*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+} ;

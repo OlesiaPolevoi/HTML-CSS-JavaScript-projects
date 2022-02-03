@@ -9,10 +9,57 @@
 
     <title>Expanding Cards</title>
   </head>
+
   <body>
-    <h1>Hello</h1>
-    <h1>Hello2</h1>
-    <h1>Hello3</h1>
+    <!-- create big div(class "container") with 5 divs inside (class "panel" and one class "active")-->
+
+    <!-- .container - creates div with class "container" -->
+    <div class="container">
+      <!-- .panel.active - make div with class panel & class active -->
+      <div
+        class="panel active"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+        "
+      >
+        <!-- use  copy image adress link from unsplash.com to inclule url-->
+        <h3>Explore The World</h3>
+      </div>
+
+      <div
+        class="panel"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+        "
+      >
+        <h3>Wild Forest</h3>
+      </div>
+      <div
+        class="panel"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
+        "
+      >
+        <h3>Sunny Beach</h3>
+      </div>
+      <div
+        class="panel"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1529973625058-a665431328fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+        "
+      >
+        <h3>City On Winter</h3>
+      </div>
+
+      <div
+        class="panel"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1621682372775-533449e550ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+        "
+      >
+        <h3>Mountains - Clouds</h3>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
