@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
+/* set css custom properties to reuse these values later in the code*/
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,4 +35,74 @@ body {
   margin-bottom: 30px;
   max-width: 100%;
   width: 350px;
+}
+
+/* create line from an empty div - behind the numbers to show progress*/
+/* faint line behind the numbers */
+.progress-container::before {
+  /*   content: "" - must add this when using before or after - set content to equal empty string */
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  height: 4px;
+  width: 0%;
+  /*   transform: translateY(-50%) - to make it appear exactly in the middle of the numbers*/
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+/* scale effect - when clicking on active button it goes down to .98 */
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }
