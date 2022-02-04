@@ -1,77 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
-/* set css custom properties to reuse these values later in the code*/
-
 :root {
-  --line-border-fill: #3498db;
-  --line-border-empty: #e0e0e0;
+  --line-border-fill: rgb(66, 66, 203);
+  --line-border-empty: rgb(179, 172, 172);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #f6f6fb;
   font-family: "Mulish", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  background-color: #e3ebf0;
 }
 
 .container {
-  /* text-align: center - sets the horizontal alignment of the content inside a block element or table-cell box. */
   text-align: center;
 }
-
 .progress-container {
   display: flex;
-  /*justify-content - horizontal spacing/spreading  */
   justify-content: space-between;
-  /*   position: relative; - this is parent - other things/children inside will be positioned absolute*/
   position: relative;
   margin-bottom: 30px;
+  /* set max-width to allow for different screen sizes */
   max-width: 100%;
+  /* remember to set width to allow elements to space out */
   width: 350px;
 }
 
-/* create line from an empty div - behind the numbers to show progress*/
-/* faint line behind the numbers */
 .progress-container::before {
-  /*   content: "" - must add this when using before or after - set content to equal empty string */
+  /* remember to add content: ""; when using before */
   content: "";
   background-color: var(--line-border-empty);
   position: absolute;
-  top: 50%;
   left: 0;
+  top: 50%;
   transform: translateY(-50%);
+
   height: 4px;
   width: 100%;
   z-index: -1;
 }
 
+/* this is the blue progress line */
 .progress {
   background-color: var(--line-border-fill);
-  height: 4px;
-  width: 0%;
-  /*   transform: translateY(-50%) - to make it appear exactly in the middle of the numbers*/
-  transform: translateY(-50%);
   position: absolute;
-  top: 50%;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 50%;
   z-index: -1;
+  /* add transition for later when changing classes*/
   transition: 0.4s ease;
 }
 
 .circle {
-  background-color: #fff;
-  color: #999;
-  border-radius: 50%;
+  background-color: white;
+  color: var(--line-border-empty);
   height: 30px;
   width: 30px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,25 +81,16 @@ body {
 
 .btn {
   background-color: var(--line-border-fill);
-  color: #fff;
+  color: white;
   border: 0;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   font-family: inherit;
   padding: 8px 30px;
   margin: 5px;
   font-size: 14px;
 }
-/* scale effect - when clicking on active button it goes down to .98 */
+/* to have changes happening on click*/
 .btn:active {
   transform: scale(0.98);
-}
-
-.btn:focus {
-  outline: 0;
-}
-
-.btn:disabled {
-  background-color: var(--line-border-empty);
-  cursor: not-allowed;
 }
