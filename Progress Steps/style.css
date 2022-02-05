@@ -40,6 +40,7 @@ body {
 
 /* create line from an empty div - behind the numbers to show progress*/
 /* faint line behind the numbers */
+
 .progress-container::before {
   /*   content: "" - must add this when using before or after - set content to equal empty string */
   content: "";

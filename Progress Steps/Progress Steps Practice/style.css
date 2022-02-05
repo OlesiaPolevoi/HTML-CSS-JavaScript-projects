@@ -56,7 +56,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   height: 4px;
-  width: 50%;
+  width: 0%;
   z-index: -1;
   /* add transition for later when changing classes*/
   transition: 0.4s ease;
@@ -93,4 +93,13 @@ body {
 /* to have changes happening on click*/
 .btn:active {
   transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }
